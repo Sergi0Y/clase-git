@@ -1,0 +1,19 @@
+{% extends 'principal/base.html' %}
+
+{% block content %}
+
+    <h2>Esta es la página de Inicio</h2>
+    <div class="cursos_content">
+    
+        {% for c in cursos %}
+        <div class="data_table">
+            <h3> {{ c.nombre }}</h3>
+            <p>profesor encargado: {{ c.profesor }}</p>
+            <p>alumnos registrados: {{ c.n_alumnos }}</p>
+            <p>{{ c.descripcion }}</p>
+        </div>
+        {% empty %}
+        <p>No hay datos</p>        
+        {% endfor %}                
+    </div>
+{% endblock %}
